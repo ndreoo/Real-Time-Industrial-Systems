@@ -1,8 +1,9 @@
 # Real-Time-Industrial-Systems
 The objective of this project is to carry out a Design of Experiment in order to understand the significant factors that characterize and influence a given scheduler. In particular, the Xen Hypervisor was installed on bare metal to run benchmarks in Xen domains and determine which scheduler performs best. To perform these analyses, it was necessary to enable real-time features in the Linux kernel. The schedulers evaluated are: credit2, null, and RTDS. For complete documentation, refer to the following files:
 
-Presentation_RTIS: Project presentation and various settings.
-DoE Full: which presents the process through which the Design of Experiment was carried out, along with all related statistical analyses.
+- Presentation_RTIS: Project presentation and various settings.
+  
+- DoE Full: which presents the process through which the Design of Experiment was carried out, along with all related statistical analyses.
 
 Directory:
 
