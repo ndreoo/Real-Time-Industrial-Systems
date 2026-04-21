@@ -1,31 +1,36 @@
+The objective of this project is to carry out a Design of Experiment in order to understand the significant factors that characterize and influence a given scheduler. In particular, the Xen Hypervisor was installed on bare metal to run benchmarks in Xen domains and determine which scheduler performs best. To perform these analyses, it was necessary to enable real-time features in the Linux kernel. The schedulers evaluated are: credit2, null, and RTDS. For complete documentation, refer to the following files:
+
+Presentation_RTIS: Project presentation and various settings.
+DoE Full: which presents the process through which the Design of Experiment was carried out, along with all related statistical analyses.
+
 Directory:
 
-- benchmark_results.zip : Esperimenti in formato csv. 
-	NOTE SULLA NOMENCLATURA DEI FILE: Ogni file .csv ha un nome che rispetta il seguente schema:
-	[dom0mem]_[sched]_[stress]_[category]_[benchmark]_[iteration], dove:
-		- dom0mem : può valere 2 o 8 (memoria assegnata al dom0)
-		- sched : rtds, null, credit2
-		- stress : cpu, io, vm, int, net
-		- category: categorie di benchmark della suite TACle (nel nostro caso: app, kernel, sequential, test)
-		- iteration : da 1 a 5 (indica la ripetizione dell'esperimento).
-  	ATTENZIONE !!! Il primo giro di esperimenti è stato effettuato raccogliendo 40 campioni,
-	a causa di ciò non bisogna considerare le prime due righe di ogni file il cui nome termina con "_1",
-	poiché i primi due valori relativi alla colonna WakeupLatency sono influenzati
-	da una non inizializzazione della relativa variabile nel codice.
-	Tutti gli altri esperimenti sono stati eseguiti raccogliendo 42 campioni ed eliminando
-	sempre le prime due righe (sono già ripuliti).
-	TUTTI i file .csv hanno 40 righe di valori catturati.
+- 	benchmark_results.zip: Experiments in CSV format.
+		FILE NAMING NOTES: Each .csv file follows this naming scheme:
+		[dom0mem]_[sched]_[stress]_[category]_[benchmark]_[iteration], where:
 
-- NuoviEsp_SchedParams : Esperimenti effettuati variando i parametri dei vari scheduler per identificare
-	la configurazione migliore. Le diverse configurazioni sono state valutate sotto stress-cpu.
-	Gli esperimenti senza stress sono stati effettuati solo per la configurazione migliore scelta.
+		dom0mem: can be 2 or 8 (memory assigned to dom0)
+		sched: rtds, null, credit2
+		stress: cpu, io, vm, int, net
+		category: benchmark categories from the TACle suite (in our case: app, kernel, sequential, test)
+		iteration: from 1 to 5 (indicates the experiment repetition).
 
-- benchmark_codice : Codici della versione 'unikernellizata' dei benchmark della suite TACle benchmarks.
-	Sono organizzati in cartelle omonime (al benchamrk).
+		WARNING!!! The first round of experiments was carried out by collecting 40 samples.
+		Because of this, the first two rows of each file whose name ends with “_1” must not be considered,
+		since the first two values in the WakeupLatency column are affected
+		by an uninitialized variable in the code.
 
-- DoE_FULL : Documento completo con il DoE effettuato su tutti gli 8 benchmark (1 DoE per ogni benchamrk). 
-	In questo caso sono stati considerati solo i parametri di default per ogni schedueler.
-	L'analisi dei parametri degli scheduler è stata aggiunta al file 'Presentazione_RTIS'.
+		All other experiments were performed by collecting 42 samples and always removing
+		the first two rows (they are already cleaned).
+		ALL .csv files contain 40 rows of recorded values.
 
-- XX_HowTo : I documenti che terminano con 'HowTo' sono delle mini-guide riguardanti Xen, 
-	Unikraft e PV_domU. 
+-	NuoviEsp_SchedParams: Experiments carried out by varying the parameters of the different schedulers to identify
+		the best configuration. The different configurations were evaluated under CPU stress.
+		Experiments without stress were performed only for the selected best configuration.
+		benchmark_codice: Code of the “unikernelized” version of the TACle benchmark suite.
+		They are organized into folders with the same name as the benchmark.
+-	DoE_FULL: Complete document with the DoE carried out on all 8 benchmarks (one DoE per benchmark).
+		In this case, only the default parameters for each scheduler were considered.
+		The analysis of scheduler parameters was added to the file “Presentazione_RTIS”.
+-	XX_HowTo: Documents ending with “HowTo” are short guides related to Xen,
+		Unikraft, and PV_domU.
