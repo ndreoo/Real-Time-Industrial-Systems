@@ -1,0 +1,8 @@
+$(eval $(call addlib,applift))
+
+APPLIFT_SRCS-y += $(APPLIFT_BASE)/lift.c
+APPLIFT_SRCS-y += $(APPLIFT_BASE)/liftlibcontrol.c
+APPLIFT_SRCS-y += $(APPLIFT_BASE)/liftlibio.c
+
+APPLIFT_CINCLUDES += -I$(APPLIFT_BASE)/liftlibcontrol.h
+APPLIFT_CINCLUDES += -I$(APPLIFT_BASE)/liftlibio.h

@@ -1,0 +1,3 @@
+$(eval $(call addlib,appduff))
+
+APPDUFF_SRCS-y += $(APPDUFF_BASE)/duff.c

@@ -1,0 +1,3 @@
+$(eval $(call addlib,appbinarysearch))
+
+APPBINARYSEARCH_SRCS-y += $(APPBINARYSEARCH_BASE)/binarysearch.c

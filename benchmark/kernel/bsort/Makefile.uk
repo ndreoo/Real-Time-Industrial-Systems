@@ -1,0 +1,3 @@
+$(eval $(call addlib,appbsort))
+
+APPBSORT_SRCS-y += $(APPBSORT_BASE)/bsort.c

@@ -1,0 +1,5 @@
+$(eval $(call addlib,appepic))
+
+APPEPIC_SRCS-y += $(APPEPIC_BASE)/epic.c
+
+APPEPIC_CINCLUDES += -I$(APPEPIC_BASE)/

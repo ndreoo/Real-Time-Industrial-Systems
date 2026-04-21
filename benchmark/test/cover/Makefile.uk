@@ -1,0 +1,3 @@
+$(eval $(call addlib,appcover))
+
+APPCOVER_SRCS-y += $(APPCOVER_BASE)/cover.c

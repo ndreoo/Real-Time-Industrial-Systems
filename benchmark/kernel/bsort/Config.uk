@@ -1,0 +1,13 @@
+config APPBSORT_WORKTIME
+	bool "Working Time"
+	default n
+	help
+	  Set the condition time for the while loop
+
+
+config TOTAL_RUNTIME_SEC
+    int "Execution time in seconds"
+    depends on APPBSORT_WORKTIME
+    default 60
+    help
+      The execution time limit for the benchmark in seconds.

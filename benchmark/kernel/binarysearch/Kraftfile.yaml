@@ -1,0 +1,32 @@
+spec: v0.6
+
+name: binarysearch
+
+unikraft:
+  version: stable
+  kconfig:
+  - CONFIG_PLAT_XEN=y
+  - CONFIG_LIBUKRANDOM=y
+  - CONFIG_LIBPOSIX_SYSINFO=y
+  - CONFIG_LIBUKSIGNAL=y
+  - CONFIG_ARCH_ARM_64=y
+  - CONFIG_XEN_GNTTAB=y
+  - CONFIG_LIBXEN_XENBUS=y
+  - CONFIG_XEN_KERNEL_HV_CONSOLE=y
+  - CONFIG_XEN_KERNEL_EMG_CONSOLE=y
+  - CONFIG_XEN_DEBUG_HV_CONSOLE=y
+  - CONFIG_XEN_DEBUG_EMG_CONSOLE=y
+  - CONFIG_LIBXEN_NETFRONT=y
+  - CONFIG_LIBXEN_BLKFRONT=y
+  - CONFIG_LIBXEN_BLKFRONT_GREFPOOL=y
+
+libraries:
+  libunwind: stable
+  compiler-rt:
+    version: stable
+    kconfig:
+      CONFIG_LIBCOMPILER_RT: 'y'
+  musl: stable
+
+targets:
+- xen/x86_64

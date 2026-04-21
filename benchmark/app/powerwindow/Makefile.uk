@@ -1,0 +1,15 @@
+$(eval $(call addlib,apppowerwindow))
+
+APPPOWERWINDOW_SRCS-y += $(APPPOWERWINDOW_BASE)/powerwindow.c
+APPPOWERWINDOW_SRCS-y += $(APPPOWERWINDOW_BASE)/powerwindow_const_params.c
+APPPOWERWINDOW_SRCS-y += $(APPPOWERWINDOW_BASE)/powerwindow_controlexclusion.c
+APPPOWERWINDOW_SRCS-y += $(APPPOWERWINDOW_BASE)/powerwindow_debounce.c
+APPPOWERWINDOW_SRCS-y += $(APPPOWERWINDOW_BASE)/powerwindow_inputs.c
+APPPOWERWINDOW_SRCS-y += $(APPPOWERWINDOW_BASE)/powerwindow_powerwindow_control.c
+APPPOWERWINDOW_SRCS-y += $(APPPOWERWINDOW_BASE)/powerwindow_PW_Control_DRV.c
+APPPOWERWINDOW_SRCS-y += $(APPPOWERWINDOW_BASE)/powerwindow_PW_Control_PSG_BackL.c
+APPPOWERWINDOW_SRCS-y += $(APPPOWERWINDOW_BASE)/powerwindow_PW_Control_PSG_BackR.c
+APPPOWERWINDOW_SRCS-y += $(APPPOWERWINDOW_BASE)/powerwindow_PW_Control_PSG_Front.c
+APPPOWERWINDOW_SRCS-y += $(APPPOWERWINDOW_BASE)/wcclib.c
+
+APPPOWERWINDOW_CINCLUDES += -I$(APPPOWERWINDOW_BASE)/powerwindow_HeaderFiles 

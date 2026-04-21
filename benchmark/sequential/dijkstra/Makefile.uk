@@ -1,0 +1,6 @@
+$(eval $(call addlib,appdijkstra))
+
+APPDIJKSTRA_SRCS-y += $(APPDIJKSTRA_BASE)/dijkstra.c
+APPDIJKSTRA_SRCS-y += $(APPDIJKSTRA_BASE)/input.c
+
+APPDIJKSTRA_CINCLUDES += -I$(APPDIJKSTRA_BASE)/ 
